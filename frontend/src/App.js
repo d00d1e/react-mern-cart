@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 // Views
@@ -10,12 +10,16 @@ import Navbar from "./components/Navbar/Navbar";
 import SideDrawer from "./components/SideDrawer/SideDrawer";
 
 import "./App.css";
+import Backdrop from "./components/Backdrop/Backdrop";
 
 export default function App() {
+  const [drawerToggle, setDrawerToggle] = useState(false);
+
   return (
     <BrowserRouter>
-      <Navbar />
-      <SideDrawer />
+      <Navbar toggle={() => setDrawerToggle(true)} />
+      <SideDrawer show={drawerToggle} toggle={() => setDrawerToggle(false)} />
+      <Backdrop show={drawerToggle} toggle={() => setDrawerToggle(false)} />
 
       <main>
         <Switch>
