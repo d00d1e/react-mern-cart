@@ -28,11 +28,6 @@ export default function App() {
           <Route exact path="/cart" component={CartView} />
         </Switch>
       </main>
-      {/* backdrop */}
-
-      {/* homescreen */}
-      {/* productscreen */}
-      {/* cartscreen */}
     </BrowserRouter>
   );
 }

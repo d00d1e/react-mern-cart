@@ -1,14 +1,14 @@
 import { createStore, compose, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 
-import { cartReducers } from "./reducers/cartReducers";
+import { cartReducer } from "./reducers/cartReducers";
 import {
   getProductDetailsReducer,
   getProductsReducer,
 } from "./reducers/productReducers";
 
 const reducer = combineReducers({
-  cart: cartReducers,
+  cart: cartReducer,
   getProducts: getProductsReducer,
   getProductDetails: getProductDetailsReducer,
 });
