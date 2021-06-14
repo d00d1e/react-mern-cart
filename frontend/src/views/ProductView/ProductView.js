@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { getProductDetails } from "../../redux/actions/productActions";
-import { addToCart, addtoCart } from "../../redux/actions/cartActions";
+import { addToCart } from "../../redux/actions/cartActions";
 
 import "./ProductView.css";
 

@@ -13,9 +13,21 @@ const reducer = combineReducers({
   getProductDetails: getProductDetailsReducer,
 });
 
+const initialState = {
+  cart: {
+    cartItems: localStorage.getItem("cart")
+      ? JSON.parse(localStorage.getItem("cart"))
+      : [],
+  },
+};
+
 // redux dev tools
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = createStore(reducer, composeEnhancer(applyMiddleware(thunk)));
+const store = createStore(
+  reducer,
+  initialState,
+  composeEnhancer(applyMiddleware(thunk))
+);
 
 export default store;

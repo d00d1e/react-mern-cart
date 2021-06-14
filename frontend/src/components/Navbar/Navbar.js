@@ -1,9 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import { useSelector } from "react-redux";
+
 import "./Navbar.css";
 
 export default function Navbar({ toggle }) {
+  const { cartItems } = useSelector((state) => state.cart);
+
+  const getCartCount = () => {
+    return cartItems.reduce((qty, item) => Number(item.qty) + qty, 0);
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar__logo">
@@ -15,7 +23,7 @@ export default function Navbar({ toggle }) {
           <Link to="/cart" className="cart__link">
             <i className="fas fa-shopping-cart"></i>
             <span>
-              Cart <span className="cartlogo__cart-badge">0</span>
+              Cart <span className="cartlogo_cart-badge">{getCartCount()}</span>
             </span>
           </Link>
         </li>
