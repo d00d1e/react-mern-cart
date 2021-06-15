@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Products.css";
+import "./Product.css";
 
 export default function Product({
   imageUrl,
